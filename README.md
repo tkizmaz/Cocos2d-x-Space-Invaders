@@ -6,3 +6,5 @@
 * SOLID prensiplerine uygun olarak yazılmıştır.
 * Object-Oriented programming temeli üstüne yazılmıştır.
 * Factory, Singleton, Creator, Information Expert gibi temel Design Pattern prensiplerine uyularak yazılmıştır.
+
+https://streamable.com/zjbsfe
