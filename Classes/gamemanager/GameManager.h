@@ -39,11 +39,8 @@ public:
 	void SetScene(cocos2d::Scene* scene) { _gameScene = scene; };
 	void IncrementScore();
 	void CheckAmmoSwitch();
-	bool GetIsRocketTurn() { return _isRocketTurn; };
 	void GameLoop(float dt);
 	void GameOver();
-	void SetIsRocketTurn(bool isRocketTurn) { _isRocketTurn = isRocketTurn; };
-	void ResetSwitchScore() { _scoreToSwitchRocket = 0; };
 	void ResetRound();
 	void ReturnFinishedObjects();
 

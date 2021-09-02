@@ -122,13 +122,19 @@ void GameManager::GameLoop(float dt) {
 	//Checking and returning done but not returned to pool objects
 	ReturnFinishedObjects();
 	//If it is rocket turn calculate time for 3 seconds, after 3 seconds return to bullets
-	if (GetIsRocketTurn()) {
+	if (_isRocketTurn) {
+		//Making label visible
 		_switchedToRocketLabel->setVisible(true);
+		//Counting to 3
 		_time += dt;
 		if (_time >= 3) {
+			//Making label unvisible
 			_switchedToRocketLabel->setVisible(false);
-			SetIsRocketTurn(false);
-			ResetSwitchScore();
+			//changing rocket turn
+			_isRocketTurn = false;
+			//reseting score to declare rocket turn
+			_scoreToSwitchRocket = 0;
+			//reseting time
 			_time = 0;
 		}
 	}

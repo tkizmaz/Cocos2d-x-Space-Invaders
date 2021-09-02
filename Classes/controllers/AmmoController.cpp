@@ -2,7 +2,7 @@
 
 USING_NS_CC;
 
-//This class for creating and moving enemyships
+//This class for creating and moving ammos
 
 //Singleton class initalizations
 AmmoController* AmmoController::_instance = nullptr;
@@ -22,7 +22,7 @@ void AmmoController::InitializeAmmo(int positionX, int positionY, cocos2d::Scene
 {
 	Ammo* createdAmmo;
 	AudioEngine::play2d(LASER_SHOT_SOUND_PATH);
-	//If it is rocket turn
+	//If it is rocket turn 
 	if (_isRocketTurn) {
 		//Get rocket from rocket pool
 		createdAmmo = ObjectPoolManager::GetInstance()->GetAmmoFromPool(ROCKET_TYPE_TAG);
