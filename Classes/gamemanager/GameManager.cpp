@@ -107,8 +107,7 @@ void GameManager::ResetRound() {
 void GameManager::GameLoop(float dt) {
 	_ammoTimer += dt;
 	if (_ammoTimer >= AMMO_FREQUENCY) {
-
-		_ammoController->InitializeAmmo(_player->getPosition().x, _player->getPosition().y + 10, _gameScene, _isRocketTurn);
+		_player->FireAmmo(_gameScene, _isRocketTurn);
 		_ammoTimer = 0;
 	}
 	//Moving ships
