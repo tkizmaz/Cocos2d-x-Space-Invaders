@@ -7,4 +7,8 @@
 * Object-Oriented programming temeli üstüne yazılmıştır.
 * Factory, Singleton, Creator, Information Expert gibi temel Design Pattern prensiplerine uyularak yazılmıştır.
 
-https://streamable.com/zjbsfe
+* Oyunun videosunu aşağıdaki linkten izleyebilirsiniz.
+* https://streamable.com/zjbsfe
+
+İyi eğlenceler dilerim,  
+**Taha Kızmaz**
