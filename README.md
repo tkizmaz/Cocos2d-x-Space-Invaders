@@ -5,4 +5,4 @@
 * Oyun geliştirmelerinde en önemli patternlar kullanılmıştır. (Object Pooling, Game Loop)
 * SOLID prensiplerine uygun olarak yazılmıştır.
 * Object-Oriented programming temeli üstüne yazılmıştır.
-
+* Factory, Creator, Information Expert gibi temel Design Pattern prensiplerine uyularak yazılmıştır.
