@@ -12,6 +12,7 @@ Player::Player() : SpriteCreator(PLAYER_SHIP_PATH, PLAYER_SHIP_WIDTH,PLAYER_SHIP
 
 void Player::FireAmmo(cocos2d::Scene* gameScene, bool _isRocketTurn)
 {
+	//Firing ammo with at the top of the player
 	_ammoController->GetInstance()->InitializeAmmo(this->getPosition().x, this->getPosition().y + 10, gameScene, _isRocketTurn);
 }
 

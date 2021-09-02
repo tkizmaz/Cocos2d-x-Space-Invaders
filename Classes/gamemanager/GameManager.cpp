@@ -106,7 +106,9 @@ void GameManager::ResetRound() {
 //Game loop is for update function, check everytime
 void GameManager::GameLoop(float dt) {
 	_ammoTimer += dt;
+	//Checking time to fire in a given time
 	if (_ammoTimer >= AMMO_FREQUENCY) {
+		//Player fires ammo
 		_player->FireAmmo(_gameScene, _isRocketTurn);
 		_ammoTimer = 0;
 	}
