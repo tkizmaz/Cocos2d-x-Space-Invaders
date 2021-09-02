@@ -6,6 +6,7 @@
 #include "ObjectPoolManager.h"
 #include "EnemyShipController.h"
 #include "AudioEngine.h"
+#include "AmmoController.h"
 
 class CollisionManager {
 

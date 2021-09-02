@@ -11,7 +11,8 @@
 #include "PlayerMovementController.h"
 #include "EnemyShipController.h"
 #include "ObjectPoolManager.h"
-#include "AudioEngine.h"
+#include "AmmoController.h"
+
 class GameManager {
 
 private:
@@ -21,14 +22,14 @@ private:
 	cocos2d::Size visibleSize;
 	cocos2d::Vec2 origin;
 	Player* _player;
-	std::list<Ammo*> allAmmoList;
 	int _scoreToSwitchRocket = 0;
 	bool _isRocketTurn;
 	int _score = 0;
-	float time = 0;
-	float ammoTimer = 0;
-	cocos2d::Label* scoreLabel;
-	cocos2d::Label* switchedToRocketLabel;
+	float _time = 0;
+	float _ammoTimer = 0;
+	cocos2d::Label* _scoreLabel;
+	cocos2d::Label* _switchedToRocketLabel;
+	AmmoController* _ammoController;
 
 public:
 
@@ -36,9 +37,6 @@ public:
 	static GameManager* GetInstance();
 	void InitializeGame();
 	void SetScene(cocos2d::Scene* scene) { _gameScene = scene; };
-	void InitializeAmmos();
-	void RemoveAmmoFromList(Ammo* ammo) {allAmmoList.remove(ammo)};
-	void MoveBullets(float dt);
 	void IncrementScore();
 	void CheckAmmoSwitch();
 	bool GetIsRocketTurn() { return _isRocketTurn; };

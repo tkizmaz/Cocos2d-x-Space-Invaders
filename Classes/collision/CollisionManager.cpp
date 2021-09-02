@@ -26,7 +26,7 @@ void CollisionManager::EnemyBulletCollision(EnemyShip* enemyShip, Ammo* ammo)
 	//Returning ammo to pool
 	ObjectPoolManager::GetInstance()->ReturnAmmoToPool(ammo);
 	//Returning ammo to manager to delete it from the list
-	GameManager::GetInstance()->RemoveAmmoFromList(ammo);
+	AmmoController::GetInstance()->ReturnAmmoToList(ammo);
 
 	//Damaging enemyship by ammo's damage
 	enemyShip->TakeDamage(ammo);
