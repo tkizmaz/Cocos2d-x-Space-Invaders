@@ -9,3 +9,8 @@ Player::Player() : SpriteCreator(PLAYER_SHIP_PATH, PLAYER_SHIP_WIDTH,PLAYER_SHIP
 	//Set tag of player
 	setTag(PLAYER_TAG);
 }
+
+void Player::FireAmmo(cocos2d::Scene* _gameScene, bool isRocketTurn)
+{
+	AmmoController::GetInstance()->InitializeAmmo(this->getPosition().x, this->getPosition().y + 10,_gameScene,isRocketTurn);
+}
