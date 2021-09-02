@@ -13,6 +13,7 @@
 #include "ObjectPoolManager.h"
 #include "AmmoController.h"
 
+
 class GameManager {
 
 private:
@@ -30,7 +31,6 @@ private:
 	cocos2d::Label* _scoreLabel;
 	cocos2d::Label* _switchedToRocketLabel;
 	AmmoController* _ammoController;
-
 public:
 
 	cocos2d::Scene* GetScene() { return _gameScene; };

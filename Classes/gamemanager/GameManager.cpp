@@ -33,7 +33,6 @@ void GameManager::InitializeGame()
 	EnemyShipController::GetInstance()->InitializeEnemies();
 
 	_ammoController = AmmoController::GetInstance();
-
 	//Creating label and placing it to left of the screen, the label returns "SCORE: "
 	auto scoreIsLabel = Label::createWithTTF("SCORE: ", "fonts/arial.ttf", 15);
 	scoreIsLabel->setPosition(Point(origin.x + scoreIsLabel->getContentSize().width, visibleSize.height - scoreIsLabel->getContentSize().height));
@@ -108,7 +107,8 @@ void GameManager::ResetRound() {
 void GameManager::GameLoop(float dt) {
 	_ammoTimer += dt;
 	if (_ammoTimer >= AMMO_FREQUENCY) {
-		_player->FireAmmo(_gameScene, _isRocketTurn);
+
+		_ammoController->InitializeAmmo(_player->getPosition().x, _player->getPosition().y + 10, _gameScene, _isRocketTurn);
 		_ammoTimer = 0;
 	}
 	//Moving ships

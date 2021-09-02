@@ -18,11 +18,6 @@ void PlayerMovementController::update(float dt)
 	MovePlayer(dt);
 }
 
-//Initializing the player as new
-void PlayerMovementController::InitializePlayerController()
-{
-	_player = new Player;
-}
 
 //To move player, it takes direction and speed given by choice if direction comes negative it goes left else, right
 void PlayerMovementController::MovePlayer(float speed)
@@ -34,4 +29,9 @@ void PlayerMovementController::MovePlayer(float speed)
 void PlayerMovementController::SetMovementDirection(int direction)
 {
 	this->_movementDirection = direction;
+}
+
+void PlayerMovementController::InitializePlayerController()
+{
+	_player = new Player;
 }
