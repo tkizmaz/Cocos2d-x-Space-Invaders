@@ -51,6 +51,13 @@
 //Enemy count
 #define ENEMY_COUNT 30
 
+//how many times in a second ammo will be fired
+#define AMMO_FREQUENCY 0.5
+//speed of ships
+#define SHIP_MOVE_SPEED 0.25
+//speed of bullets
+#define BULLET_MOVE_SPEED 2
+
 //sound paths
 #define LASER_SHOT_SOUND_PATH "sounds/laser_shot.mp3"
 #define SHIP_EXPLOSION_PATH "sounds/ship_explosion.mp3"

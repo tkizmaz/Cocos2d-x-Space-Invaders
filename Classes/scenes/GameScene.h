@@ -50,7 +50,6 @@ public:
     bool onContactBegin(cocos2d::PhysicsContact& contact);
     bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
     bool onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
-    void ShakeCamera();
     // implement the "static create()" method manually
     CREATE_FUNC(GameScene);
 private:
@@ -63,10 +62,7 @@ private:
     cocos2d::PhysicsWorld* sceneWorld;
     bool _isMoveable;
     bool GetIsMoveable() { return _isMoveable; };
-    void InitializeAmmos(float dt);
     PlayerMovementController* _playerMovementController;
-    float time = 0;
-    void GoToMainMenuScene(float dt);
 };
 
 #endif // __GAME_SCENE_H__

@@ -84,6 +84,6 @@ void MainMenuScene::touchEvent(Ref* sender, cocos2d::ui::Widget::TouchEventType 
 void MainMenuScene::GoToGameScene(cocos2d::Ref* sender)
 {
     auto scene = GameScene::createScene();
-    Director::getInstance()->replaceScene(scene);
+    Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
 

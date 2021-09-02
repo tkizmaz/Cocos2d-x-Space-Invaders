@@ -42,13 +42,11 @@ void GameManager::InitializeGame()
 	scoreLabel->setPosition(Point(origin.x + scoreLabel->getContentSize().width + scoreIsLabel->getPositionX(), visibleSize.height - scoreLabel->getContentSize().height));
 	_gameScene->addChild(scoreLabel, 1000);
 
-
 	//If it is turn to switch to rockets, show player it is rocket time
 	switchedToRocketLabel = Label::createWithTTF("STREAK! Switched to Rocket!", "fonts/arial.ttf", 15);
 	switchedToRocketLabel->setPosition(Point(visibleSize.width/2 + scoreIsLabel->getContentSize().width, visibleSize.height - switchedToRocketLabel->getContentSize().height));
 	_gameScene->addChild(switchedToRocketLabel);
 	switchedToRocketLabel->setVisible(false);
-
 	//To check the rocket turn time, initially false
 	_isRocketTurn = false;
 
@@ -85,13 +83,6 @@ void GameManager::InitializeAmmos()
 }
 
 
-//To return ammos to pool
-void GameManager::RemoveAmmoFromList(Ammo* ammo)
-{
-	allAmmoList.remove(ammo);	
-}
-
-
 void GameManager::IncrementScore()
 {
 	//Main score
@@ -114,7 +105,7 @@ void GameManager::GameOver()
 	auto scene = MainMenuScene::createScene();
 
 	//Changing scene with Fade transition and the time declared
-	Director::getInstance()->replaceScene(scene);
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 
 
 
@@ -142,14 +133,19 @@ void GameManager::ResetRound() {
 
 //Game loop is for update function, check everytime
 void GameManager::GameLoop(float dt) {
+	ammoTimer += dt;
+	if (ammoTimer >= AMMO_FREQUENCY) {
+		InitializeAmmos();
+		ammoTimer = 0;
+	}
 	//Moving ships
-	EnemyShipController::GetInstance()->MoveEnemyShips(dt / Director::getInstance()->getAnimationInterval() * 0.25);
+	EnemyShipController::GetInstance()->MoveEnemyShips(dt / Director::getInstance()->getAnimationInterval() * SHIP_MOVE_SPEED);
 	//Checking if there is ship left
 	ResetRound();
 	//Checking if switch to rocket is available
 	CheckAmmoSwitch();
 	//Moving bullets
-	MoveBullets(dt / Director::getInstance()->getAnimationInterval() * 2);
+	MoveBullets(dt / Director::getInstance()->getAnimationInterval() * BULLET_MOVE_SPEED);
 	//Checking and returning done but not returned to pool objects
 	ReturnFinishedObjects();
 	//If it is rocket turn calculate time for 3 seconds, after 3 seconds return to bullets

@@ -92,7 +92,6 @@ bool GameScene::init()
     auto contactListener = EventListenerPhysicsContact::create();
     contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
-    this->schedule(CC_SCHEDULE_SELECTOR(GameScene::InitializeAmmos),0.5);
     scheduleUpdate();
     return true;
 }
@@ -104,19 +103,13 @@ void GameScene::update(float dt)
     //Run gameloop at update
     _gameManager->GameLoop(dt);
 
-    //Check if player touched to screen, if touched, move player
+    //Check if player touched to screen, if touched, move player, getAnimatonInterval is for smoothness
     if (_isMoveable) {
         _playerMovementController->update(dt / Director::getInstance()->getAnimationInterval());
     }
    
 
 }
-//To initalize ammos and schedule
-void GameScene::InitializeAmmos(float dt)
-{
-    _gameManager->InitializeAmmos();
-}
-
 
 
 //To detect collisions

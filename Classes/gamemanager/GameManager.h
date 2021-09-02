@@ -26,6 +26,7 @@ private:
 	bool _isRocketTurn;
 	int _score = 0;
 	float time = 0;
+	float ammoTimer = 0;
 	cocos2d::Label* scoreLabel;
 	cocos2d::Label* switchedToRocketLabel;
 
@@ -36,7 +37,7 @@ public:
 	void InitializeGame();
 	void SetScene(cocos2d::Scene* scene) { _gameScene = scene; };
 	void InitializeAmmos();
-	void RemoveAmmoFromList(Ammo* ammo);
+	void RemoveAmmoFromList(Ammo* ammo) {allAmmoList.remove(ammo)};
 	void MoveBullets(float dt);
 	void IncrementScore();
 	void CheckAmmoSwitch();
@@ -46,7 +47,6 @@ public:
 	void SetIsRocketTurn(bool isRocketTurn) { _isRocketTurn = isRocketTurn; };
 	void ResetSwitchScore() { _scoreToSwitchRocket = 0; };
 	void ResetRound();
-	void DisplayScore();
 	void ReturnFinishedObjects();
 
 };
