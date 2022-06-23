@@ -11,7 +11,7 @@
 * You can watch the gameplay with the link below.
 * https://streamable.com/zjbsfe
 
-İyi eğlenceler dilerim,  
+Have fun!,  
 
 #TR
 
