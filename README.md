@@ -8,8 +8,7 @@
 * Object-Oriented programming temeli üstüne yazılmıştır.
 * Applied fundamental Design Pattern Principles such as Factory, Singleton, Creator, Information Expert.
 
-* You can watch the gameplay with the link below.
-* https://streamable.com/zjbsfe
+* You written codes from Classes folder.
 
 Have fun!,  
 
@@ -21,8 +20,7 @@ Have fun!,
 * Object-Oriented programming temeli üstüne yazılmıştır.
 * Factory, Singleton, Creator, Information Expert gibi temel Design Pattern prensiplerine uyularak yazılmıştır.
 
-* Oyunun videosunu aşağıdaki linkten izleyebilirsiniz.
-* https://streamable.com/zjbsfe
+* Yazdığım kodlara Classes klasöründen ulaşabilirsiniz.
 
 İyi eğlenceler dilerim,  
 **Taha Kızmaz**
